@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* Arka planı da pembeye daha uyumlu, çok hafif pembe tonlu bir gri yaptık */
+    background: linear-gradient(135deg, #fdf2f2 0%, #fce4ec 100%); 
+    font-family: 'Montserrat', sans-serif;
+    color: #3e2723;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.heart-box {
+    position: relative;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ANA KALP RENGİNİ PEMBE YAPTIK */
+.heart {
+    background-color: #ff80ab; /* Canlı bir pembe */
+    display: inline-block;
+    height: 100px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 100px;
+    animation: pulse 1.2s infinite;
+}
+
+/* KALBİN YAN KISIMLARI (ONLAR DA PEMBE OLMALI) */
+.heart:before, .heart:after {
+    content: "";
+    background-color: #ff80ab; /* Ana kalple aynı pembe */
+    border-radius: 50%;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+}
+
+.heart:before { top: -50px; left: 0; }
+.heart:after { left: 50px; top: 0; }
+
+@keyframes pulse {
+    0% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.1) rotate(-45deg); }
+    100% { transform: scale(1) rotate(-45deg); }
+}
+
+.message-card {
+    background: rgba(255, 255, 255, 0.7); /* Biraz daha belirgin beyaz arka plan */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 128, 171, 0.2); /* Hafif pembe gölge */
+    backdrop-filter: blur(5px);
+    max-width: 450px;
+    margin-top: 50px;
+    border: 1px solid rgba(255, 128, 171, 0.3); /* Hafif pembe sınır */
+}
+
+.special-mention {
+    font-weight: 500;
+    color: #5d4037;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.signature {
+    display: block;
+    margin-top: 25px;
+    font-weight: 500;
+    font-style: italic;
+    color: #795548;
+}
+
+footer p {
+    color: #a1887f;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
